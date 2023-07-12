@@ -52,7 +52,7 @@ def Spatialblock(data, channel_data, filte, size):
     conv2 = Conv2D(filte, (1, 1), padding="same")(LeakyReLU1)
     batch2 = BatchNormalization()(conv2)
     LeakyReLU2 = ReLU()(batch2)
-
+    spatil_data = LeakyReLU2
 
     data3 = add([channel_data, spatil_data])
     data3 = ReLU()(data3)
